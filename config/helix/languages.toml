@@ -1,0 +1,42 @@
+[[language]]
+name = "javascript"
+shebangs = ["deno", "node"]
+roots = ["deno.json", "package.json", "tsconfig.json"]
+config = { enable = true, lint = true, unstable = true }
+language-server = { command = "deno", args = ["lsp"], language-id = "javascript" }
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "jsx"
+shebangs = ["deno", "node"]
+roots = ["deno.json", "package.json", "tsconfig.json"]
+config = { enable = true, lint = true, unstable = true }
+language-server = { command = "deno", args = ["lsp"], language-id = "javascriptreact" }
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "typescript"
+shebangs = ["deno", "node"]
+roots = ["deno.json", "package.json", "tsconfig.json"]
+config = { enable = true, lint = true, unstable = true }
+language-server = { command = "deno", args = ["lsp"], language-id = "typescript" }
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "tsx"
+shebangs = ["deno", "node"]
+roots = ["deno.json", "package.json", "tsconfig.json"]
+config = { enable = true, lint = true, unstable = true }
+language-server = { command = "deno", args = ["lsp"], language-id = "typescriptreact" }
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "rust"
+indent = { tab-width = 4, unit = "    " }
+
+[language.config.check]
+command = "clippy"
+
+[language.language-server]
+command = "rustup"
+args = ["run","nightly","rust-analyzer"]
