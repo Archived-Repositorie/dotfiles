@@ -1,5 +1,6 @@
 # Zsh installation
 export ZSH="$HOME/.oh-my-zsh"
+# export DRI_PRIME=1
 
 # Variables
 GRADLE=$HOME/.gradle/bin/
@@ -21,25 +22,35 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zshrcdeno
 # Aliases
 
-alias exa="exa --icons"
+alias hx="helix"
+alias exa="exa -a --icons"
 alias ls="exa"
+alias tree="exa --tree --level=1"
+alias lls="exa --long"
+alias ltree="tree --long"
+alias dtree="exa --tree"
+alias dltree="dtree --long"
 alias cat="bat --color auto -pp --wrap never"
 alias edit="hx"
-alias reload="source ~/.zshrc"
-
+alias owofetch="owofetch | toilet -f term --gay --termwidth"
+# alias uwufetch="uwufetch | toilet -f term --gay --termwidth"
 # Important
 
 export PATH=$PATH:$GRADLE:$CARGO:$LOCALBIN:$DENO
 export EDITOR='hx'
+export FONTS="/usr/share/fonts/"
 
 # Functions
 
+reload () {
+  clear
+  source ~/.zshrc
+}
+
 update () {
-  sudo dnf update
+  ame -Syu
   flatpak update
-  rustup update
 }
 
 # Cool runs
-
-pipes.sh
+echo "$(date '+%D %T' | toilet -f standard -F border --gay --termwidth)"
